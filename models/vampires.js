@@ -2,11 +2,11 @@ const mongoose = require('mongoose');
 const Vampires = require('../db/populateVampires')
 const Schema = mongoose.Schema;
 
-const Name = new Schema({
+let Name = new fulllName({
     first_name: "", type: String, required: true,
     last_name: "", type: String, required: true});
 
-const dob = new Date({
+let dob = new Date({
     year: Number,
     month: Number,
     day: Number,
@@ -16,18 +16,10 @@ const dob = new Date({
 
 
 const vampireSchema = new Schema({
-    Name: ({
-        first_name: "", type: String, required: true,
-        last_name: "", type: String, required: true}),
+    name: {fulllName: "", type: String, required: true},
     hair_color: {type: String, required: true, defaultStatus: 'blonde'}, 
     eye_color: {type: String, required: true},
-    dob: Date({
-        year: Number,
-        month: Number,
-        day: Number,
-        hour: Number,
-        minute: Number
-    })
+    dob: {type: Schema, }
 });
     // loves: {['String'] required: true},
     // location: 

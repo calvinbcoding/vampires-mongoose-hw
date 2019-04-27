@@ -7,16 +7,23 @@
     "test": "test"
   },
   "scripts": {
-    "test": "mocha --exit"
+    "test": "mocha --exit",
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
     "url": "https://git.generalassemb.ly/WebDev-Connected-Classroom/mongoose-vampires-hw.git"
   },
-  "author": "",
+  "author": "Calvin Bruch",
   "license": "ISC",
   "dependencies": {
+    "body-parser": "^1.19.0",
     "chai": "^4.2.0",
-    "mocha": "^5.2.0"
+    "ejs": "^2.6.1",
+    "express": "^4.16.4",
+    "express-session": "^1.16.1",
+    "method-override": "^3.0.0",
+    "mocha": "^5.2.0",
+    "mongoose": "^5.5.4"
   }
 }

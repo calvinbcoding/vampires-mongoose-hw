@@ -137,5 +137,5 @@ const vampireInfo =
     gender: 'm',
     title: 'Osiris of Sewer Rats'
   }
-]
+];
 module.exports = vampireInfo;

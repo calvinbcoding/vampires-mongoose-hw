@@ -4,3 +4,15 @@ first_name: "", type: String, required: true,
 
 
         const vampire = function(Name, Hair_color, eye_color, dob);
+
+let Name = new fulllName({
+    first_name: "", type: String, required: true,
+    last_name: "", type: String, required: true});
+
+let dob = new Date({
+    year: Number,
+    month: Number,
+    day: Number,
+    hour: Number,
+    minute: Number
+});

@@ -16,6 +16,7 @@ const connectionString = 'mongodb//localhost/vampires';
 mongoose.connect(connectionString);
 // 4. Open your mongoose connection
 
+
 /////////////////////////////////////////////////
 //Write your answers to add, query, update, remove, and Hungry for More below.
 

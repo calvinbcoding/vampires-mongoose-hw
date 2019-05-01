@@ -99,16 +99,17 @@ mongoose.connection.on('error', (err) => {
 // });
 /////////////////////////////////////////////////
 //### Select objects that match one of several values
-vampire.find({name:'Steve' {$exists: true}} 
+vampire.find({name: {$exists: true}}, 
 (err, vampNamedSteve) => {
     if(err) {
         console.log(err);
     } else {
         console.log(vampNamedSteve);
     }
-  }):
+  });
 /////////////////////////////////////////////////
 //### Negative Selection
+
 
 /////////////////////////////////////////////////
 /////////////////////////////////////////////////

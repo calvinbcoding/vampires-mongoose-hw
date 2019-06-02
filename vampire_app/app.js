@@ -144,10 +144,34 @@ mongoose.connection.on('error', (err) => {
 // });
 /////////////////////////////////////////////////
 //### Select objects that match one of several values
+//have title:
+// vampire.find({
+//     title: {$exists: true}},
+ 
+// (err, vampName) => {
+//     if(err) {
+//         console.log(err);
+//     } else {
+//         console.log(vampName);
+//     }
+//   });
+
+//have no vics:
+
+// vampire.find({
+//     victims: {$exists: false}},
+ 
+// (err, vampNoVics) => {
+//     if(err) {
+//         console.log(err);
+//     } else {
+//         console.log(vampNoVics);
+//     }
+//   });
+//title AND no victims
 // vampire.find({
 //     name: {$exists: true},
-//     victims: {$exists: true},
-//     gender: {$exists: true}
+//     victims: {$exists: false}
 // }, 
 // (err, vampNameAndVics) => {
 //     if(err) {
@@ -156,6 +180,22 @@ mongoose.connection.on('error', (err) => {
 //         console.log(vampNameAndVics);
 //     }
 //   });
+
+
+//have title, and victims amount greater than 1000:
+
+vampire.find({
+    title: {$exists: true},
+    victims: {$gt: 1000}},
+ 
+(err, vampNameAndManyVics) => {
+    if(err) {
+        console.log(err);
+    } else {
+        console.log(vampNameAndManyVics);
+    }
+  });
+
 /////////////////////////////////////////////////
 //### Negative Selection
 

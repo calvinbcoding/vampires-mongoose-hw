@@ -19,7 +19,7 @@ Utilize the following resources to research the commands you will need:
 
 - A folder for your `vampire_app`
 - A file for writing your app called `app.js`. You will write your code in here (even for the database).
-**Comment out your database commands** as you get them working so that you're only running **one at a time**. This is where we will be looking for your work after you turn it in.
+**Comment out your database commands** as you get them working so that you're only running **one at a time**. This is where we will be looking for your work after you turn it in.                                                                                                                                                              
 - A file called `populateVampires.js` that includes data on vampires that you will add (later).
 
 3. `npm init`.  Install and require `mongoose`.

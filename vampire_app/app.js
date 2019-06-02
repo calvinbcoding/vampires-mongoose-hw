@@ -67,8 +67,8 @@ mongoose.connection.on('error', (err) => {
 // ## QUERYING
 /////////////////////////////////////////////////
 // ### Select by comparison
-//find all vampires with less than 1000 victims
-// vampire.find({victims: {$lt: '1000'}}, 
+//find all vampires with less than or equal to150 victims
+// vampire.find({victims: {$lte: 150}}, 
 // (err, vampsWithouManyKills) => {
 // if(err){
 //     console.log(err);
@@ -76,6 +76,50 @@ mongoose.connection.on('error', (err) => {
 //     console.log(vampsWithouManyKills);
 // }
 // });
+//have greater than 500 victimes:
+// vampire.find({victims: {$gt: 500}}, 
+// (err, vampsWithManyKills) => {
+// if(err){
+//     console.log(err);
+// }else{
+//     console.log(vampsWithManyKills);
+// }
+// });
+
+//victim count not equal to 210234
+// vampire.find({victims: {$ne: 210234}}, 
+//     (err, vampsWithoutTheseKills) => {
+//     if(err){
+//         console.log(err);
+//     }else{
+//         console.log(vampsWithoutTheseKills);
+//     }
+//     });
+
+
+//bw 150 and 500 victims:
+// vampire.find({victims: {$gt: 150, $lt: 500}}, 
+//     (err, vampsWithBetweenKills) => {
+//     if(err){
+//         console.log(err);
+//     }else{
+//         console.log(vampsWithBetweenKills);
+//     }
+//     });
+
+
+
+
+//all females vamps:
+// vampire.find({gender: 'f'},
+//  (err, vampChicks)=>{
+//         if(err){
+//             console.log(err);
+//         } else { 
+//             console.log(vampChicks);
+//         }
+//     });
+
 /////////////////////////////////////////////////
 // ### Select by exists or does not exist
 //  vampire.find({title: {$exists: true}}, (err, vampsWithTitles)=>{
@@ -85,6 +129,7 @@ mongoose.connection.on('error', (err) => {
 //         console.log(vampsWithTitles);
 //     }
 // });
+
 
 /////////////////////////////////////////////////
 // // ### Select with OR
@@ -99,14 +144,18 @@ mongoose.connection.on('error', (err) => {
 // });
 /////////////////////////////////////////////////
 //### Select objects that match one of several values
-vampire.find({name: {$exists: true}}, 
-(err, vampNamedSteve) => {
-    if(err) {
-        console.log(err);
-    } else {
-        console.log(vampNamedSteve);
-    }
-  });
+// vampire.find({
+//     name: {$exists: true},
+//     victims: {$exists: true},
+//     gender: {$exists: true}
+// }, 
+// (err, vampNameAndVics) => {
+//     if(err) {
+//         console.log(err);
+//     } else {
+//         console.log(vampNameAndVics);
+//     }
+//   });
 /////////////////////////////////////////////////
 //### Negative Selection
 

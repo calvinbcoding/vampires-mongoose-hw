@@ -184,18 +184,94 @@ mongoose.connection.on('error', (err) => {
 
 //have title, and victims amount greater than 1000:
 
-vampire.find({
-    title: {$exists: true},
-    victims: {$gt: 1000}},
+// vampire.find({
+//     title: {$exists: true},
+//     victims: {$gt: 1000}},
  
-(err, vampNameAndManyVics) => {
-    if(err) {
-        console.log(err);
-    } else {
-        console.log(vampNameAndManyVics);
-    }
-  });
+// (err, vampNameAndManyVics) => {
+//     if(err) {
+//         console.log(err);
+//     } else {
+//         console.log(vampNameAndManyVics);
+//     }
+//   });
 
+
+
+
+
+/////////////////////////////////////
+
+///### Select with OR
+// Select all the vampires that:
+
+// 1. are from New York, New York, US or New Orleans, Louisiana, US
+
+// vampire.find({
+//     $or: [
+//         {location: 'New York, New York, US'},
+//         {location: 'New Orleans, Louisiana, US'}
+//     ] 
+// },
+// (err, vampFromNYAndLS) => {
+//     if(err) {
+//         console.log(err);
+//     } else {
+//         console.log(vampFromNYAndLS);
+//     }
+//   });
+
+
+
+// 2. love brooding or being tragic
+
+// vampire.find({
+//     $or: [
+//         {loves: 'brooding'},
+//         {loves: 'being tragic'}
+//     ] 
+// },
+// (err, vamps) => {
+//     if(err) {
+//         console.log(err);
+//     } else {
+//         console.log(vamps);
+//     }
+//   });
+// 3. have more than 1000 victims or love marshmallows
+// vampire.find({
+//     $or: [
+//         {victims: {$gt: 1000}},
+//         {loves: 'marshmallows'}
+//     ] 
+// },
+// (err, vampsIncludeCalvin) => {
+//     if(err) {
+//         console.log(err);
+//     } else {
+//         console.log(vampsIncludeCalvin);
+//     }
+//   });
+
+
+// 4. have red hair or green eyes
+// vampire.find({
+//     $or: [
+//         {hair_color: 'red'},
+//         {eye_color: 'green'}
+//     ] 
+// },
+// (err, vamps) => {
+//     if(err) {
+//         console.log(err);
+//     } else {
+//         console.log(vamps);
+//     }
+//   });
+// <hr>
+// &#x1F534; The commit message should read: <br>
+// "Commit 5 - selected more vampires"
+// <hr></hr>
 /////////////////////////////////////////////////
 //### Negative Selection
 
